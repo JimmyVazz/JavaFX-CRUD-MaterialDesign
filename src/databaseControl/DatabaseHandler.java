@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package databaseControl;
 import java.sql.*;
 import java.sql.Connection;          //Aqui obtenemos el metodo conectar
@@ -10,12 +6,16 @@ import java.sql.DriverManager;       //Aqui obtenemos el manejo del driver de ja
 import java.sql.PreparedStatement;   //Aqui obtenemos una sintaxis facil de crear sentencias sql
 import java.sql.SQLException;        //Aqui obtenemos los metodo para manejo de excepciones
 /**
- *
+ *Clase principal de la conexion a la BD
  * @author jimmy
+ * @version 0.1
  */
 public class DatabaseHandler {
    
-
+    /**
+     * 
+     * @return 
+     */
     public static Connection GetDatabaseConnection() {
         Connection connection = null;
 //    Connection connection;
@@ -65,5 +65,6 @@ public class DatabaseHandler {
         }
         return status;
     }
+    
 }
 

@@ -1,11 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresaicomx.FXMLHomeController">
-    
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #004a3f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresaicomx.FXMLHomeController">
+   <children>
+      <BorderPane accessibleRole="IMAGE_VIEW" prefHeight="407.0" prefWidth="648.0" style="-fx-background-color: #48a999;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <FlowPane columnHalignment="CENTER" prefWrapLength="350.0" style="-fx-background-color: #80cbc4;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Bienvenido: " />
+                  <Label fx:id="bienvenida" prefHeight="16.0" prefWidth="87.0" />
+               </children>
+            </FlowPane>
+         </bottom>
+         <top>
+            <AnchorPane prefHeight="103.0" prefWidth="648.0" style="-fx-background-color: #004c40;" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <JFXButton layoutX="319.0" layoutY="14.0" prefHeight="51.0" prefWidth="117.0" style="-fx-background-color: #00796b;" text="Registrar Usuario" textFill="WHITE" AnchorPane.rightAnchor="200.0" />
+                  <JFXButton layoutX="464.0" layoutY="15.0" prefHeight="50.0" prefWidth="107.0" style="-fx-background-color: #00796b;" text="Salir" textFill="WHITE" AnchorPane.rightAnchor="30.0" />
+                  <Label layoutX="104.0" layoutY="29.0" prefHeight="45.0" prefWidth="106.0" text="ICO MX" textFill="WHITE" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="390.0">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="80.0" fitWidth="84.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/icons8-suzuki-filled-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="180.0" prefWidth="601.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane layoutY="8.0" prefHeight="280.0" prefWidth="600.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="137.0" minHeight="10.0" prefHeight="137.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="137.0" minHeight="10.0" prefHeight="137.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="85.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../imagenes/icons8-manager-50.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="70.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../imagenes/icons8-product-documents-50.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="23.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../imagenes/icons8-cash-in-hand-50.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="23.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="86.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../imagenes/icons8-purchase-order-50.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="22.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="77.0" fitWidth="74.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../imagenes/icons8-report-card-50.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                           <viewport>
+                              <Rectangle2D minX="10.0" minY="10.0" />
+                           </viewport>
+                        </ImageView>
+                        <Label text="CLIENTES" textFill="WHITE" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="-85.0" left="30.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="PRODUCTOS" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="-85.0" left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="VENTA" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="-85.0" left="40.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="PEDIDO" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="-85.0" left="40.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="REPORTE" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="-85.0" left="40.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
 </AnchorPane>

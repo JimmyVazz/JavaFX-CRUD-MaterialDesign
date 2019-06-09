@@ -7,22 +7,15 @@ package empresaicomx;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
  *
  * @author jimmy
  */
-public class FXMLHomeController implements Initializable {
-     
-    @FXML
-    private Label bienvenida;
-    
-    
-    
+public class FXMLProductoController implements Initializable {
+
     /**
      * Initializes the controller class.
      */

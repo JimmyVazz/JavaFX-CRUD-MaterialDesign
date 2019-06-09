@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="-2.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #48a697;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #004c40;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton layoutX="503.0" layoutY="16.0" prefHeight="38.0" prefWidth="83.0" style="-fx-background-color: #007769;" text="Regresar" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
+                  <Label layoutX="66.0" layoutY="18.0" prefHeight="35.0" prefWidth="118.0" text="Clientes" textFill="WHITE" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="416.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="472.0" prefWidth="656.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="327.0" layoutY="17.0" prefHeight="431.0" prefWidth="324.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="327.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="17.0">
+                     <children>
+                        <JFXTreeTableView layoutX="16.0" layoutY="58.0" prefHeight="212.0" prefWidth="285.0" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="58.0" />
+                        <JFXTextField focusColor="#60bfaa" layoutX="25.0" layoutY="2.0" prefHeight="17.0" prefWidth="194.0" style="-fx-background-color: #e0f2f1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="74.0" />
+                        <JFXButton layoutX="233.0" prefHeight="33.0" prefWidth="73.0" style="-fx-background-color: #007769;" text="Buscar" textFill="WHITE" AnchorPane.rightAnchor="-2.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="34.0" prefHeight="451.0" prefWidth="278.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="109.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="391.0" AnchorPane.leftAnchor="109.0">
+                           <image>
+                              <Image url="@../imagenes/icons8-manager-50.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="47.0" fitWidth="53.0" layoutX="25.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="25.0">
+                           <image>
+                              <Image url="@../imagenes/icons8-pencil-50.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="24.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="24.0">
+                           <image>
+                              <Image url="@../imagenes/icons8-delete-bin-filled-50.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton layoutX="28.0" layoutY="267.0" prefHeight="44.0" prefWidth="223.0" style="-fx-background-color: #007769;" text="Agregar Cliente" textFill="WHITE" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="28.0" />
+                        <JFXButton layoutX="94.0" layoutY="322.0" prefHeight="43.0" prefWidth="171.0" style="-fx-background-color: #007769;" text="Editar Cliente" textFill="WHITE" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="94.0" />
+                        <JFXButton layoutX="94.0" layoutY="387.0" prefHeight="41.0" prefWidth="171.0" style="-fx-background-color: #007769;" text="Eliminar Cliente" textFill="WHITE" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="94.0" />
+                        <JFXTextField layoutX="14.0" layoutY="62.0" prefHeight="26.0" prefWidth="251.0" promptText="Nombre" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="363.0" AnchorPane.leftAnchor="14.0" />
+                        <JFXTextField layoutX="14.0" layoutY="95.0" prefHeight="26.0" prefWidth="252.0" promptText="Apellido Paterno" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="330.0" AnchorPane.leftAnchor="14.0" />
+                        <JFXTextField layoutX="14.0" layoutY="129.0" prefHeight="27.0" prefWidth="252.0" promptText="Apellido Materno" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="295.0" AnchorPane.leftAnchor="14.0" />
+                        <JFXTextField layoutX="13.0" layoutY="164.0" prefHeight="25.0" prefWidth="252.0" promptText="Email" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="14.0" />
+                        <JFXTextField layoutX="14.0" layoutY="201.0" prefHeight="19.0" prefWidth="251.0" promptText="Dirección" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="228.0" AnchorPane.leftAnchor="14.0" />
+                        <JFXTextField layoutX="14.0" layoutY="236.0" prefHeight="9.0" prefWidth="251.0" promptText="Teléfono" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="195.0" AnchorPane.leftAnchor="14.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

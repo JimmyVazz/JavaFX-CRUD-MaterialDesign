@@ -3,22 +3,17 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="291.0" prefWidth="339.0" style="-fx-background-color: #AAAAAA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresaicomx.FXMLoginController">
-   <top>
-      <ImageView fitHeight="88.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@../imagenes/icono.png" />
-         </image>
-      </ImageView>
-   </top>
    <bottom>
       <JFXButton fx:id="txtEntrar" onAction="#setLoginButton" prefHeight="40.0" prefWidth="62.0" style="-fx-background-color: #1565c0;" text="Entrar" textAlignment="CENTER" textFill="#252525" BorderPane.alignment="CENTER" />
    </bottom>
@@ -40,4 +35,19 @@
          </children>
       </GridPane>
    </center>
+   <top>
+      <FlowPane prefHeight="95.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="108.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/icono.png" />
+               </image>
+               <FlowPane.margin>
+                  <Insets left="70.0" right="10.0" />
+               </FlowPane.margin>
+            </ImageView>
+            <Label text="ICO MX" />
+         </children>
+      </FlowPane>
+   </top>
 </BorderPane>
