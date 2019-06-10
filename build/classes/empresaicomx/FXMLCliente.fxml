@@ -2,9 +2,8 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -29,16 +28,11 @@
          <center>
             <AnchorPane prefHeight="472.0" prefWidth="656.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="330.0" layoutY="37.0" prefHeight="431.0" prefWidth="324.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="37.0">
+                  <AnchorPane layoutX="327.0" layoutY="17.0" prefHeight="431.0" prefWidth="324.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="327.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="17.0">
                      <children>
+                        <JFXTreeTableView fx:id="tabla" layoutX="16.0" layoutY="58.0" prefHeight="212.0" prefWidth="285.0" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="58.0" />
                         <JFXTextField fx:id="txtBuscar" focusColor="#60bfaa" layoutX="25.0" layoutY="2.0" prefHeight="17.0" prefWidth="194.0" style="-fx-background-color: #e0f2f1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="74.0" />
                         <JFXButton fx:id="btnBuscar" layoutX="233.0" prefHeight="33.0" prefWidth="73.0" style="-fx-background-color: #007769;" text="Buscar" textFill="WHITE" AnchorPane.rightAnchor="-2.0" />
-                        <TableView fx:id="tabla" layoutY="55.0" prefHeight="322.0" prefWidth="299.0">
-                          <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
-                          </columns>
-                        </TableView>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="34.0" prefHeight="451.0" prefWidth="278.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="0.0">
