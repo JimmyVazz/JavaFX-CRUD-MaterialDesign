@@ -102,13 +102,33 @@
                               <Rectangle2D minX="10.0" minY="10.0" />
                            </viewport>
                         </ImageView>
+                        <JFXButton fx:id="abrirClientes" alignment="CENTER" contentDisplay="CENTER" onAction="#abrirClientes" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #007769;" text="Clientes" textFill="WHITE" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="-110.0" left="10.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="abrirProductos" onAction="#abrirProductos" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: #007769;" text="Productos" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="-110.0" left="15.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="abrirVentas" onAction="#abrirVentas" prefHeight="38.0" prefWidth="71.0" style="-fx-background-color: #007769;" text="Ventas" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="-110.0" left="34.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="abrirPedidos" onAction="#abrirPedidos" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: #007769;" text="Pedidos" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="-110.0" left="30.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="abrirReportes" onAction="#abrirReportes" prefHeight="33.0" prefWidth="79.0" style="-fx-background-color: #007769;" text="Reportes" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="-110.0" left="34.0" />
+                           </GridPane.margin>
+                        </JFXButton>
                      </children>
                   </GridPane>
-                  <JFXButton fx:id="abrirClientes" layoutX="31.0" layoutY="189.0" onAction="#abrirClientes" text="Clientes" />
-                  <JFXButton fx:id="abrirProductos" layoutX="134.0" layoutY="189.0" onAction="#abrirProductos" prefHeight="26.0" prefWidth="85.0" text="Productos" />
-                  <JFXButton fx:id="abrirVentas" layoutX="269.0" layoutY="189.0" onAction="#abrirVentas" text="Ventas" />
-                  <JFXButton fx:id="abrirPedidos" layoutX="386.0" layoutY="189.0" onAction="#abrirPedidos" text="Pedidos" />
-                  <JFXButton fx:id="abrirReportes" layoutX="509.0" layoutY="189.0" onAction="#abrirReportes" text="Reportes" />
                </children>
                <BorderPane.margin>
                   <Insets />

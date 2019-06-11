@@ -6,12 +6,15 @@
 package empresaicomx;
 
 /**
- *
+ *Clase cliente 
  * @author jimmy
  */
 public class Cliente {
     
-    
+    /***
+     * Atributos encapsulados del cliente, para prohibir acceder de forma directa y modificarlos
+     * Todo esto de acuerdo a la BD
+     */
     private int id_cliente;
     private String nombre;
     private String apepat;
@@ -19,8 +22,30 @@ public class Cliente {
     private String direccion;
     private String telefono;
     private String email;
-
-    public int getId_cliente() {
+    
+    /***
+     * Setters and Getters
+     * De esta forma podemos meter datos en los atributos y obtenerlos para manipularlos
+     * de direferentes formas
+     * @return 
+     */
+    
+    /***
+     * Sobrecarga de constructores
+     * Uno recibe un string nombre y el otro recibe un string nombre y apepat
+     * @param nombre 
+     */
+    public Cliente(String nombre){
+       System.out.println(nombre);
+    }
+    public Cliente(String nombre, String apepat){
+        System.out.println(nombre+apepat);
+    }
+    public Cliente(){
+        
+    }
+    
+    public int getId_cliente() {           
         return id_cliente;
     }
 
@@ -75,7 +100,13 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
+    
+    /***
+     * Sobreescribimos el metodo toString
+     * Para obtenerlos de manera corrida
+     *  
+     */
     @Override
     public String toString() {
         return "Cliente{" + "id_cliente=" + id_cliente + ", nombre=" + nombre + ", apepat=" + apepat + ", apemat=" + apemat + ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email + '}';

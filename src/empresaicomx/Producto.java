@@ -6,17 +6,32 @@
 package empresaicomx;
 
 /**
- *
+ *Clase del Producto
  * @author jimmy
  */
 public class Producto {
-    
+    /***
+     * De acuerdo con la BD
+     * Encapsulamos los atributos
+     */
     private int id_producto;
     private String nombre;
     private int cantidad;
     private float precio;
-    private int disponibilidad;
 
+    public int getDisponibilidad() {
+        return disponibilidad;
+    }
+
+    public void setDisponibilidad(int disponibilidad) {
+        this.disponibilidad = disponibilidad;
+    }
+    private int disponibilidad;
+    
+    /***
+     * Setters and getters
+     * @return 
+     */
     public int getId_producto() {
         return id_producto;
     }
@@ -48,13 +63,20 @@ public class Producto {
     public void setPrecio(float precio) {
         this.precio = precio;
     }
-
-    public int getDisponibilidad() {
-        return disponibilidad;
+    
+    /***
+     * Sobreescribimos el metodo ToString
+     * 
+     * @return retorna un string con todos los datos del objeto
+     */
+    @Override
+    public String toString() {
+        return "Producto{" + "id_producto=" + id_producto + ", nombre=" + nombre + ", cantidad=" + cantidad + ", precio=" + precio + ", disponibilidad="+disponibilidad + '}';
     }
 
-    public void setDisponibilidad(int disponibilidad) {
-        this.disponibilidad = disponibilidad;
-    }
+ 
+
+
+    
     
 }

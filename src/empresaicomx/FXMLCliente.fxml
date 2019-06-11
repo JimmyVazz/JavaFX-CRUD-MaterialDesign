@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -32,13 +31,8 @@
                   <AnchorPane layoutX="330.0" layoutY="37.0" prefHeight="431.0" prefWidth="324.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="37.0">
                      <children>
                         <JFXTextField fx:id="txtBuscar" focusColor="#60bfaa" layoutX="25.0" layoutY="2.0" prefHeight="17.0" prefWidth="194.0" style="-fx-background-color: #e0f2f1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="74.0" />
-                        <JFXButton fx:id="btnBuscar" layoutX="233.0" prefHeight="33.0" prefWidth="73.0" style="-fx-background-color: #007769;" text="Buscar" textFill="WHITE" AnchorPane.rightAnchor="-2.0" />
-                        <TableView fx:id="tabla" layoutY="55.0" prefHeight="322.0" prefWidth="299.0">
-                          <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
-                          </columns>
-                        </TableView>
+                        <JFXButton fx:id="btnBuscar" layoutX="233.0" onAction="#buscarCliente" prefHeight="33.0" prefWidth="73.0" style="-fx-background-color: #007769;" text="Buscar" textFill="WHITE" AnchorPane.rightAnchor="-2.0" />
+                        <TableView fx:id="tabla" layoutY="55.0" prefHeight="322.0" prefWidth="299.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="34.0" prefHeight="451.0" prefWidth="278.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="0.0">
@@ -59,8 +53,8 @@
                            </image>
                         </ImageView>
                         <JFXButton fx:id="btnGuardar" layoutX="28.0" layoutY="267.0" onAction="#guardarDatos" prefHeight="44.0" prefWidth="223.0" style="-fx-background-color: #007769;" text="Agregar Cliente" textFill="WHITE" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="28.0" />
-                        <JFXButton fx:id="btnEditar" layoutX="94.0" layoutY="322.0" prefHeight="43.0" prefWidth="171.0" style="-fx-background-color: #007769;" text="Editar Cliente" textFill="WHITE" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="94.0" />
-                        <JFXButton fx:id="btnEliminar" layoutX="94.0" layoutY="387.0" prefHeight="41.0" prefWidth="171.0" style="-fx-background-color: #007769;" text="Eliminar Cliente" textFill="WHITE" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="94.0" />
+                        <JFXButton fx:id="btnEditar" layoutX="94.0" layoutY="322.0" onAction="#actualizarDatos" prefHeight="43.0" prefWidth="171.0" style="-fx-background-color: #007769;" text="Editar Cliente" textFill="WHITE" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="94.0" />
+                        <JFXButton fx:id="btnEliminar" layoutX="94.0" layoutY="387.0" onAction="#eliminarDatos" prefHeight="41.0" prefWidth="171.0" style="-fx-background-color: #007769;" text="Eliminar Cliente" textFill="WHITE" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="94.0" />
                         <JFXTextField fx:id="txtNombre" layoutX="14.0" layoutY="62.0" prefHeight="26.0" prefWidth="251.0" promptText="Nombre" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="363.0" AnchorPane.leftAnchor="14.0" />
                         <JFXTextField fx:id="txtApepat" layoutX="14.0" layoutY="95.0" prefHeight="26.0" prefWidth="252.0" promptText="Apellido Paterno" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="330.0" AnchorPane.leftAnchor="14.0" />
                         <JFXTextField fx:id="txtApemat" layoutX="14.0" layoutY="129.0" prefHeight="27.0" prefWidth="252.0" promptText="Apellido Materno" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="295.0" AnchorPane.leftAnchor="14.0" />

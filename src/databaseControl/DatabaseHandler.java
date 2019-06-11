@@ -15,20 +15,29 @@ import java.util.logging.Logger;
 public class DatabaseHandler {
    
     /**
-     * 
+     * Objeto ensapsulado con donde se guarda el estado de la conexion a la BD
      * @return 
      */
-    private static Connection con;
+    private static Connection con;   
     
+    /***
+     * Contructor vacio que manda un mensaje del estado de la BD
+     */
     private DatabaseHandler(){
-        
+        System.out.println("Base de datos conectada");
     }
-    
+    /***
+     * Metodo estatico connection para realizar la conexion a la BD
+     * Try
+     * Catch
+     * Para manejar las excepciones
+     * @return retorna la conexion o un null
+     */
     public static Connection getConnection() {
         if(con == null){
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost/empresaICOMX", "root", "");
+                con = DriverManager.getConnection("jdbc:mysql://localhost/empresaicomx", "root", "");
             }catch (ClassNotFoundException ex){
                 Logger.getLogger(DatabaseHandler.class.getName()).log(Level.SEVERE, null, ex);
             }catch(SQLException ex){
@@ -38,15 +47,23 @@ public class DatabaseHandler {
         }
         return con;
     }
+    /***
+     * metodo statico para desconectar para la BD
+     * regresa su valor a null, dejando fuera la conexion
+     */
     public static void disconnect(){
         if(con != null){
             con=null;
         }
     }
     
-    
-    
-    
+    /***
+     * Metodo para validar el login
+     * 
+     * @param uname variable donde se valida el usuario
+     * @param pass variable donde se valida la contraseña
+     * @return retorna un booelean y de eso se abre el Home o una alerta
+     */
     public static boolean CheckLoginUser(String uname, String pass) { //get input from login system module
         Connection connection = getConnection();
         String checkQuery = "select * from login where usuario = ? and password = ? "; // i don't use id from database table.

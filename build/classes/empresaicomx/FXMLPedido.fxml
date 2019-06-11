@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
@@ -39,9 +38,9 @@
                   </AnchorPane>
                   <AnchorPane layoutX="20.0" layoutY="14.0" prefHeight="297.0" prefWidth="274.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="306.0" AnchorPane.topAnchor="14.0">
                      <children>
-                        <JFXButton layoutX="17.0" layoutY="277.0" prefHeight="45.0" prefWidth="232.0" style="-fx-background-color: #007769;" text="Enviar Pedido" textFill="WHITE" AnchorPane.bottomAnchor="144.0" AnchorPane.leftAnchor="17.0" />
-                        <JFXButton layoutX="121.0" layoutY="331.0" prefHeight="42.0" prefWidth="128.0" style="-fx-background-color: #007769;" text="Editar Pedido" textFill="WHITE" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="121.0" />
-                        <JFXButton layoutX="122.0" layoutY="396.0" prefHeight="46.0" prefWidth="126.0" style="-fx-background-color: #007769;" text="Cancelar Pedido" textFill="WHITE" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="121.0" />
+                        <JFXButton fx:id="btnGuardar" layoutX="17.0" layoutY="277.0" onAction="#guardarDatos" prefHeight="45.0" prefWidth="232.0" style="-fx-background-color: #007769;" text="Enviar Pedido" textFill="WHITE" AnchorPane.bottomAnchor="144.0" AnchorPane.leftAnchor="17.0" />
+                        <JFXButton fx:id="btnEditar" layoutX="121.0" layoutY="331.0" prefHeight="42.0" prefWidth="128.0" style="-fx-background-color: #007769;" text="Editar Pedido" textFill="WHITE" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="121.0" />
+                        <JFXButton fx:id="btnEliminar" layoutX="122.0" layoutY="396.0" prefHeight="46.0" prefWidth="126.0" style="-fx-background-color: #007769;" text="Cancelar Pedido" textFill="WHITE" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="121.0" />
                         <ImageView fitHeight="57.0" fitWidth="60.0" layoutX="113.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="409.0" AnchorPane.leftAnchor="113.0">
                            <image>
                               <Image url="@../imagenes/icons8-paper-plane-50.png" />
@@ -57,12 +56,12 @@
                               <Image url="@../imagenes/icons8-cancel-50.png" />
                            </image>
                         </ImageView>
-                        <JFXTextField layoutX="13.0" layoutY="72.0" prefHeight="25.0" prefWidth="242.0" promptText="Folio Venta" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="369.0" AnchorPane.leftAnchor="13.0" />
-                        <JFXDatePicker layoutX="14.0" layoutY="108.0" prefHeight="25.0" prefWidth="240.0" promptText="Fecha Salida" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="333.0" AnchorPane.leftAnchor="14.0" />
-                        <JFXDatePicker layoutX="14.0" layoutY="140.0" prefHeight="25.0" prefWidth="241.0" promptText="Fecha llegada" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="14.0" />
-                        <JFXTextField layoutX="13.0" layoutY="172.0" prefHeight="25.0" prefWidth="240.0" promptText="Id Cliente" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="269.0" AnchorPane.leftAnchor="13.0" />
-                        <JFXTextField layoutX="15.0" layoutY="208.0" prefHeight="25.0" prefWidth="239.0" promptText="Id Producto" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="235.0" AnchorPane.leftAnchor="13.0" />
-                        <JFXComboBox focusColor="#09ffef" layoutX="12.0" layoutY="242.0" prefHeight="25.0" prefWidth="242.0" promptText="Estado" style="-jfx-unfocus-color: #e0f2f1;" unFocusColor="#e0f2f1" AnchorPane.bottomAnchor="199.0" AnchorPane.leftAnchor="12.0" />
+                        <JFXTextField fx:id="txtFolioVenta" layoutX="13.0" layoutY="72.0" prefHeight="25.0" prefWidth="242.0" promptText="Folio Venta" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="369.0" AnchorPane.leftAnchor="13.0" />
+                        <JFXDatePicker fx:id="txtFechaSalida" layoutX="14.0" layoutY="108.0" prefHeight="25.0" prefWidth="240.0" promptText="Fecha Salida" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="333.0" AnchorPane.leftAnchor="14.0" />
+                        <JFXDatePicker fx:id="txtFechaLlegada" layoutX="14.0" layoutY="140.0" prefHeight="25.0" prefWidth="241.0" promptText="Fecha llegada" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="14.0" />
+                        <JFXTextField fx:id="txtIdCliente" layoutX="13.0" layoutY="172.0" prefHeight="25.0" prefWidth="240.0" promptText="Id Cliente" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="269.0" AnchorPane.leftAnchor="13.0" />
+                        <JFXTextField fx:id="txtIdProducto" layoutX="15.0" layoutY="208.0" prefHeight="25.0" prefWidth="239.0" promptText="Id Producto" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="235.0" AnchorPane.leftAnchor="13.0" />
+                        <JFXTextField fx:id="txtEstado" layoutX="13.0" layoutY="241.0" prefHeight="25.0" prefWidth="239.0" promptText="Estado" style="-fx-background-color: #e0f2f1;" />
                      </children>
                   </AnchorPane>
                </children>

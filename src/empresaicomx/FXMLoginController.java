@@ -24,11 +24,15 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- *
+ * Controlador del login
  * @author jimmy
  */
 public class FXMLoginController implements Initializable {
     
+    /***
+     * Encapsulamos los atributos de la vista 
+     * De esta manera con las variables los manipulamos
+     */
     @FXML
     private JFXTextField txtUsuario;
     
@@ -38,12 +42,22 @@ public class FXMLoginController implements Initializable {
     @FXML
     private JFXButton txtEntrar;
     
-
+     /**
+     * Initializes the controller class.
+     * Verificamos los datos que se ingresen al textfield
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-
+    /***
+     * Con este metodo realizamos la accion de hacer el login 
+     * Con los datos verificamos si son correctos
+     * para abrir la pagina principal
+     * Sino, lanzamos una alerta de error
+     * @param actionEvent
+     * @throws IOException 
+     */
     public void setLoginButton(javafx.event.ActionEvent actionEvent) throws IOException {
         String uname = txtUsuario.getText();
         String pass = txtPassword.getText();
@@ -68,7 +82,10 @@ public class FXMLoginController implements Initializable {
     }
    
    
-    
+    /***
+     * Setters and getters
+     * @return 
+     */
     public JFXTextField getTxtUsuario() {
         return txtUsuario;
     }
