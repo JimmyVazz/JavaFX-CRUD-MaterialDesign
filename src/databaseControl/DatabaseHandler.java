@@ -23,7 +23,7 @@ public class DatabaseHandler {
     /***
      * Contructor vacio que manda un mensaje del estado de la BD
      */
-    private DatabaseHandler(){
+    public DatabaseHandler(){
         System.out.println("Base de datos conectada");
     }
     /***
@@ -37,7 +37,7 @@ public class DatabaseHandler {
         if(con == null){
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost/empresaicomx", "root", "");
+                con = DriverManager.getConnection("jdbc:mysql://localhost/empresa", "root", "");
             }catch (ClassNotFoundException ex){
                 Logger.getLogger(DatabaseHandler.class.getName()).log(Level.SEVERE, null, ex);
             }catch(SQLException ex){
