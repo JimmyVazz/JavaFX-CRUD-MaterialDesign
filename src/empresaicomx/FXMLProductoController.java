@@ -269,7 +269,7 @@ public class FXMLProductoController implements Initializable {
          ObservableList <Producto> productos = FXCollections.observableArrayList();
         try {
             st = databaseControl.DatabaseHandler.getConnection().createStatement();
-            ResultSet resulSet = st.executeQuery("select * from productos where nombre = '"+name+"'  ");
+            ResultSet resulSet = st.executeQuery("select * from productos where nombre like '%"+name+"%'  ");
             resulSet.beforeFirst();
             
             while(resulSet.next() ){
@@ -289,8 +289,6 @@ public class FXMLProductoController implements Initializable {
         
         
      }
-     
-     
      
      
      
@@ -353,6 +351,10 @@ public class FXMLProductoController implements Initializable {
      public void eliminarDatos(javafx.event.ActionEvent actionEvent) throws IOException {
         FXMLProductoController productoEliminado = new FXMLProductoController();
         productoEliminado.delete(tempoID);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+         alert.setTitle("Éxito");
+         alert.setContentText("Producto, eliminado de manera correcta");
+          alert.show();
         tabla.setItems(productoEliminado.getAllProductos());
      } 
      

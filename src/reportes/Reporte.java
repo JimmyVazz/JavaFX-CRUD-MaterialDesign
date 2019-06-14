@@ -13,17 +13,30 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.swing.JRViewer;
 
-/**
+/**Clase de reporte con la cual generamos reportes en base a los viewer ya predeterminados con un query
  *
  * @author jimmy
+ */
+
+/***
+ * 
+ * 
  */
 public class Reporte {
     private String reporte;
     
+    /***
+     * Constructor con un string, con el nombre del archivo del reporte a generar
+     * @param reporte 
+     */
     public Reporte(String reporte){
         this.reporte = reporte;
     }
     
+    /***
+     * Metodo para generar reporte
+     * Se genera una conexion mysql, despues de cargan los parametros, se compila y se muestra el PDF
+     */
     public void generarReporte(){
         databaseControl.DatabaseHandler conexionMySQL = new databaseControl.DatabaseHandler();
         Connection conn = conexionMySQL.getConnection();

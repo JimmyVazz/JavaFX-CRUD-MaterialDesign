@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/jimmy/Escritorio/Tutoriales/JavaFX-CRUD-MaterialDesign/src/empresaicomx/FXMLHomeController.java</file>
-            <file>file:/home/jimmy/Escritorio/Tutoriales/JavaFX-CRUD-MaterialDesign/src/empresaicomx/FXMLReporteController.java</file>
+            <file>file:/home/jimmy/Escritorio/Tutoriales/JavaFX-CRUD-MaterialDesign/src/empresaicomx/Cliente.java</file>
+            <file>file:/home/jimmy/Escritorio/Tutoriales/JavaFX-CRUD-MaterialDesign/src/databaseControl/DatabaseHandler.java</file>
+            <file>file:/home/jimmy/Escritorio/Tutoriales/JavaFX-CRUD-MaterialDesign/src/empresaicomx/EmpresaICOMX.java</file>
+            <file>file:/home/jimmy/Escritorio/Tutoriales/JavaFX-CRUD-MaterialDesign/src/empresaicomx/FXMLPedidoController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -10,6 +10,7 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -17,13 +18,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -58,8 +66,22 @@ public class FXMLVentaController implements Initializable {
     JFXButton btnEditar;
     @FXML
     JFXButton btnEliminar;
+    @FXML
+    TableView tabla;
+    @FXML
+    private JFXTextField txtBuscar;
+    @FXML
+    private JFXButton btnBuscar;
+    int tempoID;
     
-   
+   /***
+    * Declaramos la tabla para mostrar las ventas
+    */ 
+   TableColumn<Producto, Integer> columnId = new TableColumn<>("ID");        
+   TableColumn<Producto, String> columnFechaVenta = new TableColumn<>("FechaVenta");
+   TableColumn<Producto, Float> columnCantidad = new TableColumn<>("Cantidad");
+   TableColumn<Producto, Integer> columnCliente = new TableColumn<>("Cliente");
+   TableColumn<Producto, Integer> columnProducto = new TableColumn<>("Producto");
      /**
      * Initializes the controller class.
      * Verificamos los datos que se ingresen al textfield
@@ -78,6 +100,47 @@ public class FXMLVentaController implements Initializable {
                 }
             }
         });
+        
+     /***
+      * En esta parte hacemos editable la table view
+      */
+       /***
+    * Inicializamos la tabla
+    */
+   columnId.setCellValueFactory(new PropertyValueFactory<>("folio_venta"));
+   columnFechaVenta.setCellValueFactory(new PropertyValueFactory<>("fecha_venta"));
+   columnCantidad.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
+   columnCliente.setCellValueFactory(new PropertyValueFactory<>("id_cliente"));
+   columnProducto.setCellValueFactory(new PropertyValueFactory<>("id_producto"));
+      //Alineamos las collumnas
+   columnId.prefWidthProperty().bind(tabla.widthProperty().divide(5));
+   columnFechaVenta.prefWidthProperty().bind(tabla.widthProperty().divide(5));
+   columnCantidad.prefWidthProperty().bind(tabla.widthProperty().divide(5));
+   columnCliente.prefWidthProperty().bind(tabla.widthProperty().divide(5));
+   columnProducto.prefWidthProperty().bind(tabla.widthProperty().divide(5));
+   //Cargamos los productos
+   FXMLVentaController ventaAgregada = new FXMLVentaController();
+   tabla.getColumns().addAll(columnId, columnFechaVenta, columnCantidad, columnCliente, columnProducto);
+    tabla.setItems(ventaAgregada.getAllVentas());
+    
+       //Hacemos la tabla editable
+    tabla.setOnMouseClicked(new EventHandler<MouseEvent>(){
+ 
+          @Override
+          public void handle(MouseEvent arg0) {
+             
+             Venta venta = (Venta) tabla.getSelectionModel().getSelectedItem();
+                txtFechaVenta.setValue(venta.getfecha_venta());
+                txtCantidad.setText(venta.getCantidad()+"");
+                txtIdCliente.setText(venta.getId_cliente()+"");
+                txtIdProducto.setText(venta.getId_producto()+"");
+               //Si fuera int le agreariamos cliente.getDireccion()+""
+                tempoID =venta.getId_producto();
+                
+                
+          }
+ 
+      });  
             
     }
     /**
@@ -161,6 +224,65 @@ public class FXMLVentaController implements Initializable {
             Logger.getLogger(FXMLVentaController.class.getName()).log(Level.SEVERE, null, ex);
         }
      }
+     
+           /***
+      * Lista observable para ingresar los clientes de la BD
+      * @return 
+      */
+     public ObservableList<Venta> getAllVentas(){
+         ObservableList <Venta> ventas = FXCollections.observableArrayList();
+        try {
+            st = databaseControl.DatabaseHandler.getConnection().createStatement();
+            ResultSet resulSet = st.executeQuery("select * from ventas");
+            resulSet.beforeFirst();
+            
+            while(resulSet.next() ){
+               Venta venta = new Venta();
+               venta.setId_producto(resulSet.getInt(1));
+               //venta.setfecha_venta(resulSet.getString(2));
+                venta.setCantidad(resulSet.getInt(3));
+               venta.setId_cliente(resulSet.getInt(4));
+               venta.setId_producto(resulSet.getInt(5));
+               ventas.add(venta);
+                System.out.println(venta);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLClienteController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ventas;
+        
+        
+     }
+         /***
+      * Lista observable para ingresar los clientes de la BD
+      * @return 
+      */
+     public ObservableList<Venta> searchVentas(int id){
+         ObservableList <Venta> ventas = FXCollections.observableArrayList();
+        try {
+            st = databaseControl.DatabaseHandler.getConnection().createStatement();
+            ResultSet resulSet = st.executeQuery("select * from ventas where id_cliente like '%"+id+"%' ");
+            resulSet.beforeFirst();
+            
+            while(resulSet.next() ){
+               Venta venta = new Venta();
+               venta.setId_producto(resulSet.getInt(1));
+               //venta.setfecha_venta(resulSet.getString(2));
+                venta.setCantidad(resulSet.getInt(3));
+               venta.setId_cliente(resulSet.getInt(4));
+               venta.setId_producto(resulSet.getInt(5));
+               ventas.add(venta);
+                System.out.println(venta);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLClienteController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ventas;
+        
+        
+     }
+     
+     
          /***
          * Acciones de los botones:
          * @Guardar void que inserta los datos en la BD
@@ -185,6 +307,7 @@ public class FXMLVentaController implements Initializable {
          txtIdCliente.setText("");
          txtCantidad.setText("");
          txtIdProducto.setText("");
+         tabla.setItems(ventaAgregada.getAllVentas());
     }
     
 }

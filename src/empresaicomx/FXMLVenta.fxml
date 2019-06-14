@@ -3,8 +3,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -57,9 +57,9 @@
          <center>
             <AnchorPane prefHeight="330.0" prefWidth="305.0" style="-fx-background-color: #48a697;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXTreeTableView layoutX="27.0" layoutY="24.0" prefHeight="283.0" prefWidth="263.0" style="-fx-background-color: #e0f2f1;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="58.0" />
-                  <JFXButton layoutX="223.0" layoutY="14.0" prefHeight="35.0" prefWidth="74.0" style="-fx-background-color: #007769;" text="Buscar" textFill="WHITE" AnchorPane.rightAnchor="7.0" />
-                  <JFXTextField focusColor="#345f75" layoutY="19.0" prefHeight="24.0" prefWidth="218.0" style="-fx-background-color: #e0f2f1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="86.0" />
+                  <JFXButton fx:id="btnBuscar" layoutX="223.0" layoutY="14.0" prefHeight="35.0" prefWidth="74.0" style="-fx-background-color: #007769;" text="Buscar" textFill="WHITE" AnchorPane.rightAnchor="7.0" />
+                  <JFXTextField fx:id="txtBuscar" focusColor="#345f75" layoutY="19.0" prefHeight="24.0" prefWidth="218.0" style="-fx-background-color: #e0f2f1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="86.0" />
+                  <TableView fx:id="tabla" layoutX="6.0" layoutY="70.0" prefHeight="347.0" prefWidth="374.0" />
                </children>
             </AnchorPane>
          </center>

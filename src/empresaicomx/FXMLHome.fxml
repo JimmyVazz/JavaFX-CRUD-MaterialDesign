@@ -29,7 +29,7 @@
             <AnchorPane prefHeight="103.0" prefWidth="648.0" style="-fx-background-color: #004c40;" BorderPane.alignment="TOP_LEFT">
                <children>
                   <JFXButton layoutX="319.0" layoutY="14.0" prefHeight="51.0" prefWidth="136.0" style="-fx-background-color: #00796b;" text="Registrar Usuario" textFill="WHITE" AnchorPane.rightAnchor="181.0" />
-                  <JFXButton layoutX="464.0" layoutY="15.0" prefHeight="50.0" prefWidth="107.0" style="-fx-background-color: #00796b;" text="Salir" textFill="WHITE" AnchorPane.rightAnchor="30.0" />
+                  <JFXButton fx:id="regresar" layoutX="464.0" layoutY="15.0" onAction="#regresar" prefHeight="50.0" prefWidth="107.0" style="-fx-background-color: #00796b;" text="Salir" textFill="WHITE" AnchorPane.rightAnchor="30.0" />
                   <Label layoutX="104.0" layoutY="29.0" prefHeight="45.0" prefWidth="106.0" text="ICO MX" textFill="WHITE" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="390.0">
                      <font>
                         <Font name="System Bold" size="25.0" />

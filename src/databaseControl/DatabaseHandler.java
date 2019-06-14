@@ -14,6 +14,7 @@ import java.util.logging.Logger;
  */
 public class DatabaseHandler {
    
+    
     /**
      * Objeto ensapsulado con donde se guarda el estado de la conexion a la BD
      * @return 
@@ -26,6 +27,7 @@ public class DatabaseHandler {
     public DatabaseHandler(){
         System.out.println("Base de datos conectada");
     }
+   
     /***
      * Metodo estatico connection para realizar la conexion a la BD
      * Try

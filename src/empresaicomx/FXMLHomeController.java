@@ -53,6 +53,10 @@ public class FXMLHomeController implements Initializable {
      * @param actionEvent
      * @throws IOException 
      */
+    
+    
+    
+    
     public void abrirClientes(javafx.event.ActionEvent actionEvent) throws IOException{
             abrirClientes.getScene().getWindow().hide();
             Stage dashboardStage = new Stage();

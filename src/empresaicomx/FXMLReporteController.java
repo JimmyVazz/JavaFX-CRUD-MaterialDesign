@@ -63,9 +63,15 @@ public class FXMLReporteController implements Initializable {
      */
     public void generarProductos(javafx.event.ActionEvent actionEvent) throws IOException{
         reportes.Reporte reporte = new reportes.Reporte("producto");
+        //Abrimos el reporte en pdf
         reporte.generarReporte();   
     } 
    
+    /***
+     * Regresar al home
+     * actionEvent
+     * @throws IOException 
+     */
      public void regresar(javafx.event.ActionEvent actionEvent) throws IOException{
             regresar.getScene().getWindow().hide();
             Stage dashboardStage = new Stage();

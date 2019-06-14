@@ -58,6 +58,8 @@ public class Cliente {
     }
 
     public void setNombre(String nombre) {
+        this.nombre = nombre.toUpperCase();
+        
         this.nombre = nombre;
     }
 
@@ -110,6 +112,10 @@ public class Cliente {
     @Override
     public String toString() {
         return "Cliente{" + "id_cliente=" + id_cliente + ", nombre=" + nombre + ", apepat=" + apepat + ", apemat=" + apemat + ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email + '}';
+    }
+
+    private String toUpperCase() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

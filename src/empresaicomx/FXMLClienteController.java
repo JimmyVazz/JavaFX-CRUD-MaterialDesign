@@ -321,7 +321,7 @@ public class FXMLClienteController implements Initializable {
          ObservableList <Cliente> clientes = FXCollections.observableArrayList();
         try {
             st = databaseControl.DatabaseHandler.getConnection().createStatement();
-            ResultSet resulSet = st.executeQuery("select * from clientes where nombre = '"+name+"'  ");
+            ResultSet resulSet = st.executeQuery("select * from clientes where nombre like '%"+name+"%'  ");
             resulSet.beforeFirst();
             
             while(resulSet.next() ){
@@ -416,6 +416,10 @@ public class FXMLClienteController implements Initializable {
      public void eliminarDatos(javafx.event.ActionEvent actionEvent) throws IOException {
         FXMLClienteController clienteEliminado = new FXMLClienteController();
         clienteEliminado.delete(tempoID);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+         alert.setTitle("Éxito");
+         alert.setContentText("Cliente, eliminado de manera correcta");
+          alert.show();
         tabla.setItems(clienteEliminado.getAllClientes());
      } 
      
